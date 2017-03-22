@@ -73,9 +73,14 @@ nnoremap <leader>mt :!clear && make test<cr>
 nnoremap <leader>mc :!clear && make clean<cr>
 nnoremap <leader>m<leader> :!clear && make 
 
+" Move lines in all modes
+nnoremap J :m .+1<CR>==
+nnoremap K :m .-2<CR>==
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
 call plug#begin('~/.vim/plugged')
     Plug 'jiangmiao/auto-pairs'
-    Plug 'kana/vim-arpeggio'
     Plug 'ntpeters/vim-better-whitespace'
     Plug 'jeetsukumaran/vim-buffergator'
     Plug 'MattesGroeger/vim-bookmarks'
@@ -94,9 +99,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-repeat'
     Plug 'sukima/xmledit'
   call plug#end()
-
-  "Arpeggio
-  call arpeggio#map('iv', '', 0, 'jk', '<Esc>')
 
   "BetterWhitespace
   nnoremap <leader>sw :StripWhitespace<cr>
