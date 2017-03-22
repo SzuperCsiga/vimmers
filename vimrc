@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#bash <(curl -fsSL SzuperCsiga.github.io/vimmers/vimrc)
+
 FILE="$HOME/.vimrc"
 
 BOLD=$(tput bold)
